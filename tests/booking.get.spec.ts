@@ -1,7 +1,7 @@
 import { test, expect, request } from "@playwright/test";
 
 test.describe("GET  All booking", async () => {
-  test("", async ({ request, page }) => {
-    page.goto(`${process.env.BASE_URL}`);
+  test("Open url", async ({ page }) => {
+    await page.goto(`${process.env.BASE_URL}`);
   });
 });
