@@ -4,6 +4,7 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+  deployment_status:
 
 jobs:
   test-api:
