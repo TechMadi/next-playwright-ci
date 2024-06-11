@@ -29,6 +29,7 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+          overwrite: true
   test-ui:
     timeout-minutes: 60
     runs-on: ubuntu-latest
