@@ -6,4 +6,8 @@ test.describe("Open Local Host", async () => {
 
     await expect(page).toHaveTitle("Create Next App");
   });
+
+  test("Learn Next Js", async ({ page }) => {
+    // await page.goto(process.env.CLIENT_BASE_URL as string) ;
+  });
 });
