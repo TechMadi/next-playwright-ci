@@ -8,7 +8,7 @@ setup("sign in as a user", async ({ page }) => {
   await page.getByLabel("Email").fill(process.env.DEV_EMAIL! as string);
 
   await page.getByPlaceholder("Password").fill(process.env.PASSWORD! as string);
-  page.getByRole("button", { name: "Login" }).click();
+  await page.getByRole("button", { name: "Login" }).click();
 
   await expect(page.getByText(OVERVIEW_TEXT)).toBeVisible();
   await page.context().storageState({ path: userAuthFile });
