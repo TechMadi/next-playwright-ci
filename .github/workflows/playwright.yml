@@ -22,7 +22,10 @@ jobs:
       - name: Run Playwright tests
         run: pnpm exec playwright test --grep @api
         env:
-          BASE_URL: ${{secrets.BASE_URL}}
+          BASE_URL: https://automationintesting.online/
+          DEV_EMAIL: "devkuku@sample-no.com"
+          PASSWORD: dev_spearcad
+          DEVNAME: "Dev Kuku"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
