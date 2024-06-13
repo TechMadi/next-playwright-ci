@@ -3,7 +3,7 @@ const OVERVIEW_TEXT = "Here's your overview";
 const userAuthFile = "playwright/.auth/user.json";
 
 setup("sign in as a user", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/", { waitUntil: "domcontentloaded" });
 
   await page.getByLabel("Email").fill(process.env.DEV_EMAIL! as string);
 
