@@ -1,0 +1,115 @@
+{
+  "cookies": [
+    {
+      "name": "CLID",
+      "value": "08c2f7eb872a4cb0ae5bdc60bd082a0b.20240613.20250613",
+      "domain": "www.clarity.ms",
+      "path": "/",
+      "expires": 1749799417.697464,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_clck",
+      "value": "1xvk3r5%7C2%7Cfml%7C0%7C1625",
+      "domain": "localhost",
+      "path": "/",
+      "expires": 1749799417,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "sb-cwrldrmpxrbtgtncvfta-auth-token",
+      "value": "%5B%22eyJhbGciOiJIUzI1NiIsImtpZCI6InBxNmFNNUp4VXVYRmdPRVoiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzE4MjY3MDE5LCJpYXQiOjE3MTgyNjM0MTksImlzcyI6Imh0dHBzOi8vY3dybGRybXB4cmJ0Z3RuY3ZmdGEuc3VwYWJhc2UuY28vYXV0aC92MSIsInN1YiI6Ijc5NTkyMTBhLTg1MGEtNDBhYy1iYWIxLTYxZDI5YTE4OGIyZCIsImVtYWlsIjoiZGV2a3VrdUBzYW1wbGUtbm8uY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6e30sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3MTgyNjM0MTl9XSwic2Vzc2lvbl9pZCI6ImI4MmFkZTg4LTYwMmEtNDRlOC1hNDZjLWIzM2VjMGZjN2ExMSIsImlzX2Fub255bW91cyI6ZmFsc2V9.DKpMk503Y9gv_7O6RtIjcGNcDd9ZvYzcSLzsBoCQ6IA%22%2C%22onvDHtyRKA1Umx1iJjJCRQ%22%2Cnull%2Cnull%2Cnull%5D",
+      "domain": "localhost",
+      "path": "/",
+      "expires": 1752823418.0292,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "MUID",
+      "value": "16404F2A38ED67BD32545BB7391066BD",
+      "domain": ".bing.com",
+      "path": "/",
+      "expires": 1751959418.165218,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "MR",
+      "value": "0",
+      "domain": ".c.bing.com",
+      "path": "/",
+      "expires": 1718868218.165439,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "SRM_B",
+      "value": "16404F2A38ED67BD32545BB7391066BD",
+      "domain": ".c.bing.com",
+      "path": "/",
+      "expires": 1751959418.165611,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_clsk",
+      "value": "o792hh%7C1718263418269%7C1%7C1%7Cp.clarity.ms%2Fcollect",
+      "domain": "localhost",
+      "path": "/",
+      "expires": 1718349818,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "SM",
+      "value": "C",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "MUID",
+      "value": "16404F2A38ED67BD32545BB7391066BD",
+      "domain": ".clarity.ms",
+      "path": "/",
+      "expires": 1751959418.359221,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "MR",
+      "value": "0",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": 1718868218.359552,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ANONCHK",
+      "value": "0",
+      "domain": ".c.clarity.ms",
+      "path": "/",
+      "expires": 1718264018.359757,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": []
+}

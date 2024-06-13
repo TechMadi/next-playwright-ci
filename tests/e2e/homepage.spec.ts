@@ -1,5 +1,5 @@
-import test, { expect } from "@playwright/test";
-import { userAuthFile } from "../setup/auth-user.setup";
+import { test, expect } from "@playwright/test";
+const userAuthFile = "playwright/.auth/user.json";
 
 test.describe(
   "Open Local Host",
@@ -13,7 +13,7 @@ test.describe(
     test("Open Local host ", async ({ page }) => {
       await page.goto(process.env.CLIENT_BASE_URL as string);
 
-      await expect(page).toHaveTitle("Create Next App");
+      await expect(page).toHaveTitle("Spear CAD");
     });
 
     test("Learn Next Js", async ({ page }) => {
