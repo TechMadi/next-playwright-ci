@@ -11,7 +11,7 @@ permissions:
   pages: write
   id-token: write
 
-  # Do not cancel in-progress runs as we want to allow there production deployment to complete
+# Do not cancel in-progress runs as we want to allow there production deployment to complete
 
 jobs:
   test-api:
@@ -52,7 +52,7 @@ jobs:
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-        path: playwright-report/
+         path: playwright-report/
 
 deploy:
   needs: test
