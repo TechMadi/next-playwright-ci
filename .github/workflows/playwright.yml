@@ -13,10 +13,6 @@ permissions:
 
   # Do not cancel in-progress runs as we want to allow there production deployment to complete
 
-concurrency: 
-  group: 'pages',
-  cancel-in-progress: false
-
 jobs:
   test-api:
     timeout-minutes: 15
