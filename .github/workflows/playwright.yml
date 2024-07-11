@@ -44,16 +44,8 @@ jobs:
           name: merged-report-as-blob
           path: blob-report/
           retention-days: 14
-      # # Configure Pages 
-      # - name: Configure Github Pages
-      #   uses: actions/configure-pages@v4
 
-      # # Uplaod the report as a page artifcat 
-      # - name: Upload Pages Artifact
-      #   uses: actions/upload-pages-artifact@v3
-      #   with:
-      #    path: playwright-report/
-  merge-reports-and-upload:
+  merge-reports-and-upload: 
     if: always()
     needs: [test-api]
     runs-on: ubuntu-latest
