@@ -4,7 +4,7 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
-  deployment_status:
+
 # Give the workflow  permission to deploy the pages inside 
 permissions: 
   contents: read
