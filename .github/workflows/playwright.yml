@@ -38,6 +38,7 @@ jobs:
           name: blob-report
           path: blob-report/
           retention-days: 14
+          overwrite: true
 
   merge-reports-and-upload:
     if: always()
@@ -62,7 +63,7 @@ jobs:
 
       # Download the reports uploaded previously
       - name: Download blob reports from Github Actions Artifacts
-        uses: actions/download-artifacts@v3
+        uses: actions/download-artifact@v4
         with:
           name: blob-report
           path: blob-report/
