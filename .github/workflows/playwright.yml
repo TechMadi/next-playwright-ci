@@ -53,8 +53,7 @@ jobs:
       #   uses: actions/upload-pages-artifact@v3
       #   with:
       #    path: playwright-report/
-  merge-reports-and-upload: 
-  # Merges the report 
+  merge-reports-and-upload:
     if: always()
     needs: [test-api]
     runs-on: ubuntu-latest
