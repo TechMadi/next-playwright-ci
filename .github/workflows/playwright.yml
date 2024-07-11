@@ -53,15 +53,14 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
          path: playwright-report/
-
-deploy:
-  needs: test
-  environment:
-    name: github-pages
-    url: $${{steps.deployment.outputs.page_url}}
-  runs-on: ubuntu-latest
-  steps:
-  - name: Deploy to Github Pages
-    uses: action/deploy-pages@v3
+  deploy:
+    needs: test-api
+    environment:
+      name: github-pages
+      url: $${{steps.deployment.outputs.page_url}}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to Github Pages
+      uses: action/deploy-pages@v3
 
   
