@@ -5,6 +5,17 @@ on:
   pull_request:
     branches: [main, master]
   deployment_status:
+# Give the workflow  permission to deploy the pages inside 
+permissions: 
+  contents: read
+  pages: write
+  id-token: write
+
+  # Do not cancel in-progress runs as we want to allow there production deployment to complete
+
+concurrency: 
+  group: 'pages',
+  cancel-in-progress: false
 
 jobs:
   test-api:
@@ -30,14 +41,31 @@ jobs:
           DEV_EMAIL: devkuku@sample-no.com
           PASSWORD: dev_spearcad
           DEVNAME: "Dev Kuku"
-
-          # Create a folder called blob-report  to put all the reports
       - uses: actions/upload-artifact@v4
         name: Upload blob report to github actions artifacts
         if: always()
         with:
-          name: blob-report
-          path: blob-report/
+          name: playwright-report
+          path: playwright-report/
           retention-days: 14
+      # Configure Pages 
+      - name: Configure Github Pages
+        uses: actions/configure-pages@v4
+
+      # Uplaod the report as a page artifcat 
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+        path: playwright-report/
+
+deploy:
+  needs: test
+  environment:
+    name: github-pages
+    url: $${{steps.deployment.outputs.page_url}}
+  runs-on: ubuntu-latest
+  steps:
+  - name: Deploy to Github Pages
+    uses: action/deploy-pages@v3
 
   
