@@ -8,8 +8,12 @@ on:
 
 jobs:
   test-api:
-    timeout-minutes: 60
+    timeout-minutes: 15
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1/2, 2/2]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -20,19 +24,63 @@ jobs:
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
       - name: Run Playwright tests
-        run: pnpm exec playwright test --grep @api
+        run: pnpm exec playwright test --shard ${{matrix.shard}} --grep @api
         env:
           BASE_URL: https://automationintesting.online/
           DEV_EMAIL: devkuku@sample-no.com
           PASSWORD: dev_spearcad
           DEVNAME: "Dev Kuku"
+
+          # Create a folder called blob-report  to put all the reports
       - uses: actions/upload-artifact@v4
+        name: Upload blob report to github actions artifacts
         if: always()
         with:
-          name: playwright-report
+          name: blob-report
+          path: blob-report/
+          retention-days: 14
+
+  merge-reports-and-upload:
+    if: always()
+    needs: [test-api]
+    runs-on: ubuntu-latest
+    outputs:
+      timestamp: ${{ steps.timestampid.outputs.timestamp}}
+    steps:
+      - name: Set a timestamp
+        id: timestampid
+        run: echo  "timestamp=$(date --utc +%Y%m%d_%H%M%SZ)" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - name: Install dependencies
+        run: npm ci
+
+        # Download teh reports uploaded
+      - name: Downloand blob reports from Github Actions Artifacts
+        uses: action/download-artifacts@v3
+        with:
+          name: blob-report
+          path: blob-report/
+
+        #Upload
+      - name: Uplaod Full html report to artifacts for history
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-${{steps.timestampid.outputs.timestamp}}
           path: playwright-report/
-          retention-days: 30
-          overwrite: true
+          retention-days: 14
+      - name: Push the new files to github pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          publish_dir: ./playwright-report
+          destination_dir: ${{steps.timestampid.outputs.timestamp}}
+      - name: Write URL in Summary
+        run: echo"### Test results (link available after 20 secs) - https://${{ github.repository_owner }}.github.io/playwright-example-with-typescript/${{ steps.timestampid.outputs.timestamp }}/" >> $GITHUB_STEP_SUMMARY
+
   test-ui:
     timeout-minutes: 60
     runs-on: ubuntu-latest
