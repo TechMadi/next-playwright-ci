@@ -36,7 +36,7 @@ jobs:
         if: always()
         with:
           name: blob-report
-          path: blob-report/
+          path: playwright-report/
           retention-days: 14
           overwrite: true
 
