@@ -53,13 +53,17 @@ jobs:
       #   uses: actions/upload-pages-artifact@v3
       #   with:
       #    path: playwright-report/
-  merge-reports-and-upload:
+  merge-reports-and-upload: 
+  # Merges the report 
     if: always()
     needs: [test-api]
     runs-on: ubuntu-latest
+
     outputs:
       timestamp: ${{ steps.timestampid.outputs.timestamp }}
+
     steps:
+    # Unique identifier
       - name: Set a timestamp
         id: timestampid
         run: echo "timestamp=$(date --utc +%Y%m%d_%H%M%SZ)" >> "$GITHUB_OUTPUT" 
