@@ -29,6 +29,7 @@ jobs:
           DEV_EMAIL: devkuku@sample-no.com
           PASSWORD: dev_spearcad
           DEVNAME: "Dev Kuku"
+          CI: true
 
           # Create a folder called blob-report  to put all the reports
       - uses: actions/upload-artifact@v4
