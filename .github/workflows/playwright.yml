@@ -23,7 +23,7 @@ jobs:
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
       - name: Run Playwright tests
-        run: pnpm exec playwright test --shard ${{matrix.shard}} --grep @api
+        run: pnpm exec playwright test --shard ${{matrix.shard}} --grep @api -output=all-blobs-report
         env:
           BASE_URL: https://automationintesting.online/
           DEV_EMAIL: devkuku@sample-no.com
