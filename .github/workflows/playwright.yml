@@ -66,8 +66,8 @@ jobs:
       - name: Download blob reports from Github Actions Artifacts
         uses: actions/download-artifact@v4
         with:
-          name: blob-report-*
           path: download-blob-report/
+          pattern: blob-report-*
           # merge-multiple: true
 
       # Merge the blobs into one single HTML report
