@@ -70,6 +70,9 @@ jobs:
           pattern: blob-report-*
           merge-multiple: true
 
+      - name: List downloaded reports
+        run: ls -R all-blob-report
+
       # Merge the blobs into one single HTML report
       - name: Merge the blobs into one single HTML report
         run: pnpm exec playwright merge-reports --reporter html all-blob-report
