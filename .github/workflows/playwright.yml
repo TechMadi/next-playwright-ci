@@ -43,7 +43,7 @@ jobs:
 
   merge-reports-and-upload:
     permissions:
-      contents: read
+      contents: read, write
     if: always()
     needs: [test-api]
     runs-on: ubuntu-latest
