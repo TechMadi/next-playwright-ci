@@ -79,12 +79,7 @@ jobs:
 
       # Merge the blobs into one single HTML report
       - name: Merge the blobs into one single HTML report
-        run:
-          pnpm exec playwright merge-reports --reporter html playwright-report
-          if [ $? -ne 0 ]; then
-          echo "Error merging reports"
-          exit 1
-          fi
+        run: pnpm exec playwright merge-reports --reporter html playwright-report
 
       # Upload full HTML report to artifacts for history
       - name: Upload full HTML report to artifacts for history
