@@ -66,16 +66,16 @@ jobs:
       - name: Download blob reports from Github Actions Artifacts
         uses: actions/download-artifact@v4
         with:
-          path: all-blob-report
+          path: playwright-report/
           pattern: blob-report-*
           merge-multiple: true
 
       - name: List downloaded reports
-        run: ls -R all-blob-report
+        run: ls -R playwright-report
 
       # Merge the blobs into one single HTML report
       - name: Merge the blobs into one single HTML report
-        run: pnpm exec playwright merge-reports --reporter html ./next-playwright-ci/all-blob-report
+        run: pnpm exec playwright merge-reports --reporter html playwright-report
 
       # Upload full HTML report to artifacts for history
       - name: Upload full HTML report to artifacts for history
