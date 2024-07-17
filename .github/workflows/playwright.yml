@@ -37,7 +37,7 @@ jobs:
         if: always()
         with:
           name: blob-report-${{matrix.shard}}
-          path: playwright-report
+          path: blob-report
           retention-days: 14
           overwrite: true
 
@@ -81,7 +81,7 @@ jobs:
       - name: Merge the blobs into one single HTML report
         run: |
           ls -la playwright-report
-          pnpm exec playwright merge-reports --reporter html playwright-report
+          pnpm exec playwright merge-reports --reporter html blob-report
           if [ $? -ne 0 ]; then
             echo "Error merging reports"
             exit 1
